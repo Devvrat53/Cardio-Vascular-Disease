@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>Fuel Consumption</title>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/bootstrap.min.css" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="../static/style.css" />
+
+</head>
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="booking-cta">
+							<h1>Cardio-Vascular Disease</h1>
+							<h2>{{ prediction_text }}</h2>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							<form action= {{ url_for("predict") }} method= 'post'>
+								<div class="row">
+									<!-- Age -->
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Age</span>
+											<input class="form-control" name="age" type="text" placeholder="Enter a age" required>
+										</div>
+									</div>
+									<!-- Weight -->
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Weight</span>
+											<input class="form-control" name="weight" type="text" placeholder="Enter a your weight" required>
+										</div>
+									</div> <!-- col-md-4 -->
+									<!-- Gender -->
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Gender</span>
+											<select name="gender" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="1">Male</option>
+												<option value="2">Female</option>
+											</select>
+										</div>
+									</div> <!-- col-md-4 -->
+								</div> <!-- row -->
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Systolic Blood Pressure</span>
+											<input class="form-control" name="systolic_blood_pressure" type="text" placeholder="Systolic Blood Pressure" required>
+										</div>
+									</div> <!-- col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Diastolic Blood Pressure</span>
+											<input class="form-control" name="diastolic_blood_pressure" type="text" placeholder="Diastolic Blood Pressure" required>
+										</div>
+									</div> <!-- col-md-6 -->
+								</div> <!-- row -->
+
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Cholesterol</span>
+											<select name="cholesterol" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="1">Normal</option>
+												<option value="2">Above Normal</option>
+												<option value="3">Way above Normal</option>
+											</select>
+											<!--<span class="select-arrow"></span> -->
+										</div>
+									</div> <!-- col-md-4 -->
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Glucose</span>
+											<select name="glucose" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="1">Normal</option>
+												<option value="2">Above Normal</option>
+												<option value="3">Way above Normal</option>
+											<!-- <span class="select-arrow"></span> -->
+											</select>
+										</div>
+									</div> <!-- col-md-4 -->
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Physical Activity</span>
+											<select name="physical_activity" class="form-control">
+												<option value="#">Select a value</option>
+												<option value="0">No Physical Activity</option>
+                        						<option value="1">Physical Activity</option>
+											</select>
+											<!-- <span class="select-arrow"></span> -->
+										</div>
+									</div> <!-- col-md-4 -->
+								</div> <!-- row -->
+								<div class="form-btn">
+									<button class="submit-btn">Check</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
