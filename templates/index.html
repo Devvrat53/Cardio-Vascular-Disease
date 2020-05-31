@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<title>Fuel Consumption</title>
+	<title>Cardio-Vascular Disease</title>
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<!-- Bootstrap -->
@@ -24,7 +24,16 @@
 					<div class="col-md-4">
 						<div class="booking-cta">
 							<h1>Cardio-Vascular Disease</h1>
-							<h2>{{ prediction_text }}</h2>
+							<!--<h2>{{ prediction_text }}</h2> -->
+							<div class="container">
+                                {% if prediction_text == 0 %}
+                                <h2>You have Cardio-Vascular Disease</h2>
+
+                                {% elif prediction_text == 1 %}
+                                <h2>You do not have Cardio-Vascular Disease</h2>
+                                {% endif %}
+
+                            </div>
 						</div>
 					</div>
 					<div class="col-md-7 col-md-offset-1">

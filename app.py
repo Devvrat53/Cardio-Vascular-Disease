@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, jsonify
 import pickle
 import numpy as np
 
@@ -16,12 +16,14 @@ def predict():
     final = [np.array(int_features)]
     #print(final)
     prediction = model.predict(final)
-    output = round(prediction[0], 2)
+    output = prediction
     #print(output)
-    if output == 1:
+    return render_template('index.html', prediction_text= output)
+    '''
+    if output == [1]:
         return render_template('index.html', prediction_txt= 'You have a Cardio-vascular disease')
     else:
         return render_template('index.html', prediction_txt= 'You do not Cardio-vascular disease')
-    
+'''    
 if __name__ == '__main__':
     app.run(debug= True)
